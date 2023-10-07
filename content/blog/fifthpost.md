@@ -1,7 +1,6 @@
 ---
-title: This is my fifth post.
-description: This is a test post.
-date: 2018-09-30
-tags: second tag
+title: This is a fifth post (draft)
+date: 2023-01-23
+draft: true
 ---
-This is a test post.
+This is a draft post
