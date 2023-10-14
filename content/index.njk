@@ -5,7 +5,96 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
+    <main>
+        <div id="carousel" class="carousel slide" style="height: 700px;">
+            <div class="carousel-inner h-100 w-75" style="margin:auto;">
+                <div class="carousel-item active h-100 overflow-auto">
+                    <h2>About Me</h2>
+                    <p>Hi! I'm Jamie! I'm a passionate coder who loves doing everything from website development to building full applications in C++.</p>
+                    <p>I'm still fairly new, but I love learning new things, and can usually pick them up quite quickly. I want to know everything I can about
+                        coding and figure out how programs work. I've also dabbled with Blender and Unreal Engine.</p>
+                    <p>I also love video games, climbing and maths. I have a Master's degree in Maths which gives me excellent problem solving skills.</p>
+                    <p>CV available here as a <a href="/img/Jamie Shaw CV 290923.pdf">pdf</a>.</p>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="row h-100">
+                        <div class="d-none d-sm-flex w-50 h-100 justify-content-center align-items-center">
+                            <img src="/img/QMaths screenshot.png" alt="screenshot of the main header file" class="img-fluid mx-auto my-auto" width="600px">
+                        </div>
+                        <div class="container-sm width_change h-100 overflow-auto">
+                            <h2>QMaths</h2>
+                            <p>I started this project with the intention of creating a maths library that could handle all the necessary linear algebra for computer graphics.</p>
+                            <p>Most maths libraries tend to use matrices to handle rotations but I decided it would work better with 
+                            <a href="https://en.wikipedia.org/wiki/Quaternion#:~:text=Hamilton%20defined%20a%20quaternion%20as,Multiplication%20of%20quaternions%20is%20noncommutative.">
+                                quaternions</a> instead.</p>
+                            <p>This library contains everything needed to handle translation, rotation and scaling, and allows vectors and matrices of any size.</p>
+                            <p>The repo can be found <a href="https://github.com/shawrie777/QMaths">here.</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="row h-100">
+                        <div class="d-none d-sm-flex w-50 h-100 justify-content-center align-items-center">
+                            <img src="/img/QGraphics screenshot.png" alt="screenshot of the main header file" class="img-fluid mx-auto my-auto" width="600px">
+                        </div>
+                        <div class="container-sm width_change h-100 overflow-auto">
+                            <h2>QGraphics</h2>
+                            <p>I built this library to provide a quick way to build graphical programs using openGL in windows. It is built on QMaths 
+                                and has features to create a wide variety of built-in 3D shapes, lighting and materials, and even allows importing FBX models
+                                created in Blender.
+                            </p>
+                            <p>This covers everything needed for a simple 3D graphics program, including mouse and keyboard input, camera controls and the ability
+                                to precisely move, rotate or scale objects.
+                            </p>
+                            <p>The repo can be found <a href="https://github.com/shawrie777/QGraphics">here.</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="row h-100">
+                        <div class="d-none d-sm-flex w-50 h-100 justify-content-center align-items-center">
+                            <img src="/img/Draughts.gif" alt="gif showing 3d movement of pieces" class="img-fluid mx-auto my-auto" width="600px">
+                        </div>
+                        <div class="container-sm width_change h-100 overflow-auto">
+                            <h2>Draughts</h2>
+                            <p>This is my version of the classic boardgame, built using my own graphics library, QGraphics.</p>
+                            <p>It features 3D movement, with each piece visibly lifting off the board, and a shadow effect underneath. It also uses multiple materials
+                                for the pieces to indicate kings and selected pieces.</p>
+                            <p>The repo can be found <a href="https://github.com/shawrie777/Draughts">here.</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="row h-100">
+                        <div class="d-none d-sm-flex w-50 h-100 justify-content-center align-items-center">
+                            <img src="/img/Algebra Screenshot.png" alt="screenshot of algebra system" class="img-fluid mx-auto my-auto" width="600px"
+                            style="border-style: solid; border-color: white;">
+                        </div>
+                        <div class="container-sm width_change h-100 overflow-auto">
+                            <h2>Algebra System</h2>
+                            <p>Inspired by <a href="https://www.wolframalpha.com/">Wolfram Alpha</a>, I'm building this with the intention of it being 
+                            able to solve as many equations as possible.</p>
+                            <p>It uses regular expressions to understand the users input and creates a set of nested expressions to prioritise its order
+                                of operations. It then works from the deepest nested layer outwards to find a solution. This is still a work in progress.
+                            </p>
+                            <p>The repo can be found <a href="https://github.com/shawrie777/Algebra-System-3">here.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev h-100" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next h-100" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+        </div>
+    </main>
+
+
+{# {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
@@ -16,7 +105,7 @@ numberOfLatestPostsToShow: 3
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
 <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
+{% endif %} #}
 
 {# List every content page in the project #}
 {#
