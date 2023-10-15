@@ -30,6 +30,11 @@ a:link {color:white;}
 a:hover {color:lightgrey;}
 a:visited {color:lightgrey;}
 
+textarea, input{
+	text-align: left;
+	width: 350px;
+}
+
 
 /* Defaults */
 :root {

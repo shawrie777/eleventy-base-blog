@@ -4,3 +4,51 @@ eleventyNavigation:
   key: Contact
   order: 4
 ---
+
+<h1>Contact</h1>
+<div class='d-card'>
+<form name="contact" method="POST" data-netlify="true">
+
+  <div class="row">
+    <div class="col-6" style="text-align:right">
+    <label>First Name:</label>
+    </div><div class="col-6" style="text-align:left">
+    <input required type='text' name='first'>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" style="text-align:right">
+      <label>Surname:</label>
+      </div><div class="col-6" style="text-align:left">
+      <input required type='text' name='last'>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" style="text-align:right">
+      <label>Email:</label>
+      </div><div class="col-6" style="text-align:left">
+      <input required type='email' name='email'>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" style="text-align:right">
+      <label>Message:</label>
+      </div><div class="col-6" style="text-align:left">
+      <textarea name='message'></textarea>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6" style="text-align:right">
+      <input type="checkbox" required name="T&Cs" style="width:35px; height: 35px">
+    </div><div class="col-6" style="text-align:left">
+      <label>Accept terms and conditions</label>
+    </div>
+    </div>  
+
+  <input type="submit" style="text-align:center">
+</form>
+</div>
